@@ -1,0 +1,22 @@
+.containerCard{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.card{
+  background-color: black;
+  border:  solid 4px red;
+  border-radius: 10px;
+  max-width: 300px;
+  color: whitesmoke;
+  text-align: center;
+}
+.card img{
+  width: 100%;
+}
+.btn{
+  background: red;
+  border:  solid 4px rgb(108, 108, 108);
+  border-radius: 10px;
+}
