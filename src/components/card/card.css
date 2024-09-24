@@ -1,22 +1,48 @@
 .containerCard{
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 24px;
   justify-content: center;
 }
 .card{
-  background-color: black;
-  border:  solid 4px red;
-  border-radius: 10px;
+  background-color: var(--fondo-terciario);
+  border:  var(--bordes) 2px solid;
+  border-radius: 8px;
   max-width: 300px;
-  color: whitesmoke;
   text-align: center;
+  padding: 16px;
+  margin: 8px;
 }
-.card img{
+
+.img {
   width: 100%;
+  border: var(--bordes) 2px solid;
+  border-radius: 8px;
+  height: auto;
+  object-fit: cover;
 }
+
+.link{
+  text-decoration: none;
+  color: var(--texto-secundario);
+  font-family: var(--fuente-principal);
+  font-size: var(--Titulo-principal);
+}
+
 .btn{
-  background: red;
-  border:  solid 4px rgb(108, 108, 108);
-  border-radius: 10px;
+  background: var(--fondo-primario);
+  border:  var(--bordes) 2px solid;
+  border-radius: 8px;
+  height: 48px;
+  width: 100px;
+  margin: 8px;
+  color: var(--texto-primario);
+  font-family: var(--fuente-principal);
+  font-size: var(--Titulo-principal);
+}
+
+.btn:hover{
+  background: var(--fondo-secundario);
+  color: var(--fondo-bg);
+  cursor: pointer;
 }

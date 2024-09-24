@@ -1,15 +1,24 @@
 import * as React from "react"
 import "./card.css"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
-const Card = ({ img = "https://picsum.photos/200/300", title = "Titulo", decription = "Descripción", btn = "+info"}) => {
+const Card = ({
+  imageData,
+  title = "Titulo",
+  description = "Descripción",
+  link = "+info",
+}) => {
   return (
     <div className="card">
       <figure>
-        <img src={img} alt={title} />
+        <GatsbyImage image={imageData} alt={title} className="img" />
       </figure>
       <h2>{title}</h2>
-      <p>{decription}</p>
-      <button className="btn">{btn}</button>
+      <p>{description}</p>
+      <Link to={link} className="link">
+        <button className="btn">+info</button>
+      </Link>
     </div>
   )
 }

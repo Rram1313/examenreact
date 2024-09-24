@@ -1,22 +1,55 @@
 import * as React from "react"
+import Card from "../components/card/card"
+import { getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Card from "../components/card/card"
+import { graphql } from "gatsby"
 
-const Contacto = () => (
+const Contacto = ({ data }) => (
   <Layout>
     <h1>Contacto</h1>
     <div className="containerCard">
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
+      {data.allDataJson.edges.map(({ node }) => {
+        const imageData = getImage(node.image)
+        return (
+          <Card
+            key={node.id}
+            imageData={imageData}
+            title={node.title}
+            description={node.description}
+            link={node.link}
+          />
+        )
+      })}
     </div>
   </Layout>
 )
+
+export const query = graphql`
+  query MyQuery {
+    allDataJson {
+      edges {
+        node {
+          id
+          title
+          link
+          description
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                formats: WEBP
+                width: 300
+                placeholder: DOMINANT_COLOR
+                aspectRatio: 1.77
+              )
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export const Head = () => <Seo title="Contacto" />
 

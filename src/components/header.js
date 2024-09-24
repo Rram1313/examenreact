@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => (
   <header
@@ -11,15 +10,7 @@ const Header = ({ siteTitle }) => (
       justifyContent: `space-between`,
     }}
   >
-    <Link
-      to="/"
-      style={{
-        fontSize: `var(--font-sm)`,
-        textDecoration: `none`,
-      }}
-    >
-      {siteTitle}
-    </Link>
+    {siteTitle}
     <img
       alt="Gatsby logo"
       height={20}

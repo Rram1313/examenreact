@@ -23,5 +23,26 @@
   --Titulo-principal: 24px bold;
   --Titulo-secundario: 20px medium;
   --texto-regular: 16px;
-  --texto-secundario: 14px;
+}
+
+body{
+  background: var(--fondo-bg);
+}
+
+h1{
+  color: var(--texto-primario);
+  font-family: var(--fuente-principal);
+  font-size: var(--Titulo-principal);
+}
+
+h2{
+  color: var(--texto-primario);
+  font-family: var(--fuente-principal);
+  font-size: var(--Titulo-secundario);
+}
+
+p{
+  color: var(--texto-secundario);
+  font-family: var(--fuente-secundaria);
+  font-size: var(--texto-regular);
 }
